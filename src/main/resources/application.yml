@@ -11,15 +11,15 @@ spring:
       url: redis://default:DrIftwsuxDLOLbIXwZSPXdbIRWgThqSe@produce-prairie-communicative-71228.db.redis.io:15575
 
     mongodb:
-      uri: mongodb+srv://gautamchy2002_db_user:a6h2YNeyc1djEfbk@cluster0.iqk7im8.mongodb.net/journaldbs?retryWrites=true&w=majority
+      uri: ${MONGO_URI}
       database: journaldbs
       auto-index-creation: true
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: gautamchy2002@gmail.com
-    password: plxv tcjq suph rpxd
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -28,12 +28,12 @@ spring:
             enable: true
 
 server:
-  port: 8081
+  port: ${PORT:8081}
   servlet:
     context-path: /journal
 
 weather:
   api:
-    key : e694537cd65feaba19fba44250a3900d
+    key : ${WEATHER_API_KEY}
 
 

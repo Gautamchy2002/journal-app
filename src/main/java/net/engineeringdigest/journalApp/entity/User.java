@@ -1,5 +1,7 @@
 package net.engineeringdigest.journalApp.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -28,6 +30,7 @@ public class User {
     private String email;
     private boolean sentimentAnalysis;
     @NonNull
+    @JsonIgnore
   private  String password;
 @DBRef
     private List<JournalEntry> journalEntries = new ArrayList<>();

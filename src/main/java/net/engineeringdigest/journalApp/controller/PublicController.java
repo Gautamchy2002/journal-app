@@ -36,7 +36,10 @@ public class PublicController {
         return "Ok Gautam";
     }
 
-
+    @GetMapping("/users")
+    public ResponseEntity<?> getAllUsers() {
+        return new ResponseEntity<>(userService.getAll(), HttpStatus.OK);
+    }
 
     @PostMapping("/signup")
     public void signup(@RequestBody User user){
